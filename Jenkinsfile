@@ -22,6 +22,8 @@ pipeline {
 			  echo "$patchVersion"
 			  echo "Output of overrideBuildsAllTime"
 			  echo "${env.overrideBuildsAllTime}"
+			  echo "Params VERSION_NUMBER"
+			  echo "${params.VERSION_NUMBER}"
 		    }
 		  }
 		}
