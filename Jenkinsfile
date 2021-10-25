@@ -5,12 +5,8 @@ pipeline {
     //    }
     //}
     agent any
-    script {
-      properties([
-        parameters([
-          string(name: 'VERSION_NUMBER', defaultValue: '', description: 'If you want to change the patch version enter this value, else defaults to BUILDS_ALL_TIME')
-        ])
-      ])
+    parameters {
+        string(name: 'VERSION_NUMBER', defaultValue: '', description: 'Enter a integer to override BUILDS_ALL_TIME, leave default value if you do not want to override')
     }
     environment {
         majorVersion = 3
