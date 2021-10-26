@@ -16,6 +16,9 @@ pipeline {
         // GITHUB_STATUS_API_ENDPOINT = sh(returnStdout: true, script: "echo https://api.github.com/repos/picarro/${GITHUB_REPO_NAME}/statuses/${GIT_COMMIT}").trim()
     }
     stages {
+	    stage ("Set Build name" ) {
+	        currentBuild.displayName = "$majorVersion" + "." + "$minorVersion" + "." + "$patchVersion";
+	    }
 	    stage ("Echo patchVersion") {
 		  steps {
 		    script {
