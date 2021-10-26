@@ -17,7 +17,11 @@ pipeline {
     }
     stages {
 	    stage ("Set Build name" ) {
-	        currentBuild.displayName = "$majorVersion" + "." + "$minorVersion" + "." + "$patchVersion";
+	      steps {
+	        script {
+	          currentBuild.displayName = "$majorVersion" + "." + "$minorVersion" + "." + "$patchVersion";
+	        }
+	      }
 	    }
 	    stage ("Echo patchVersion") {
 		  steps {
